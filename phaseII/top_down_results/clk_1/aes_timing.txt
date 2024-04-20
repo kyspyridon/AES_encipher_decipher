@@ -1,0 +1,78 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'aes' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : aes
+Version: M-2016.12
+Date   : Mon May 16 09:35:58 2022
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: worst_low   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: core/aes_core_ctrl_reg_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core/dec_block/block_w1_reg_reg[29]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  core/aes_core_ctrl_reg_reg[1]/CK (DFF_X1)               0.00 #     0.00 r
+  core/aes_core_ctrl_reg_reg[1]/Q (DFF_X1)                0.08       0.08 r
+  core/U34/ZN (AND2_X2)                                   0.06       0.14 r
+  core/U211/ZN (AOI22_X1)                                 0.04       0.17 f
+  core/U193/ZN (INV_X1)                                   0.04       0.21 r
+  core/keymem/round[0] (aes_key_mem)                      0.00       0.21 r
+  core/keymem/U686/ZN (INV_X1)                            0.04       0.25 f
+  core/keymem/U682/ZN (NOR2_X1)                           0.05       0.30 r
+  core/keymem/U684/ZN (AND2_X1)                           0.06       0.36 r
+  core/keymem/U1093/Z (BUF_X2)                            0.05       0.41 r
+  core/keymem/U1199/Z (BUF_X2)                            0.07       0.48 r
+  core/keymem/U4815/ZN (AOI22_X1)                         0.04       0.52 f
+  core/keymem/U4831/ZN (NAND4_X1)                         0.03       0.55 r
+  core/keymem/U4832/ZN (AOI22_X1)                         0.03       0.58 f
+  core/keymem/U923/ZN (NAND3_X1)                          0.04       0.62 r
+  core/keymem/round_key[94] (aes_key_mem)                 0.00       0.62 r
+  core/dec_block/round_key[94] (aes_decipher_block)       0.00       0.62 r
+  core/dec_block/U815/ZN (XNOR2_X1)                       0.07       0.69 r
+  core/dec_block/U1311/Z (XOR2_X1)                        0.08       0.77 r
+  core/dec_block/U1467/ZN (XNOR2_X1)                      0.07       0.83 r
+  core/dec_block/U1379/ZN (XNOR2_X1)                      0.07       0.90 r
+  core/dec_block/U1296/Z (XOR2_X1)                        0.08       0.98 r
+  core/dec_block/U1321/ZN (XNOR2_X1)                      0.07       1.05 r
+  core/dec_block/U101/ZN (XNOR2_X1)                       0.07       1.12 r
+  core/dec_block/U559/ZN (XNOR2_X1)                       0.06       1.18 r
+  core/dec_block/U558/ZN (XNOR2_X1)                       0.06       1.24 r
+  core/dec_block/U119/ZN (AND2_X1)                        0.04       1.28 r
+  core/dec_block/U113/ZN (NOR2_X1)                        0.02       1.30 f
+  core/dec_block/U772/ZN (NAND3_X1)                       0.02       1.33 r
+  core/dec_block/block_w1_reg_reg[29]/D (DFF_X2)          0.01       1.33 r
+  data arrival time                                                  1.33
+
+  clock clk (rise edge)                                   1.00       1.00
+  clock network delay (ideal)                             0.00       1.00
+  core/dec_block/block_w1_reg_reg[29]/CK (DFF_X2)         0.00       1.00 r
+  library setup time                                     -0.03       0.97
+  data required time                                                 0.97
+  --------------------------------------------------------------------------
+  data required time                                                 0.97
+  data arrival time                                                 -1.33
+  --------------------------------------------------------------------------
+  slack (VIOLATED)                                                  -0.37
+
+
+1

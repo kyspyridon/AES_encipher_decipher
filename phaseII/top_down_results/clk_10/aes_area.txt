@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : aes
+Version: M-2016.12
+Date   : Sun May 15 21:59:51 2022
+****************************************
+
+Library(s) Used:
+
+    NangateOpenCellLibrary (File: /local/embedded/soc_new_aes/NangateOpenCellLibrary_PDKv1_3_v2010_12/Front_End/Liberty/CCS/NangateOpenCellLibrary_worst_low_ccs.db)
+
+Number of ports:                         2292
+Number of nets:                         21021
+Number of cells:                        17953
+Number of combinational cells:          14961
+Number of sequential cells:              2985
+Number of macros/black boxes:               0
+Number of buf/inv:                       2495
+Number of references:                      22
+
+Combinational area:              17898.341950
+Buf/Inv area:                     1689.099976
+Noncombinational area:           13498.169510
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:                 31396.511461
+Total area:                 undefined
+1

@@ -1,0 +1,94 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'aes' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : aes
+Version: M-2016.12
+Date   : Sun May 15 22:48:20 2022
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: worst_low   Library: NangateOpenCellLibrary
+Wire Load Model Mode: top
+
+  Startpoint: keylen_reg_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: core/keymem/key_mem_reg[1][30]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  aes                5K_hvratio_1_1        NangateOpenCellLibrary
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  keylen_reg_reg/CK (DFF_X1)                              0.00 #     0.00 r
+  keylen_reg_reg/Q (DFF_X1)                               0.11       0.11 f
+  core/keylen (aes_core)                                  0.00       0.11 f
+  core/enc_block/keylen (aes_encipher_block)              0.00       0.11 f
+  core/enc_block/U1620/ZN (AND2_X1)                       0.06       0.16 f
+  core/enc_block/U1619/ZN (OAI22_X1)                      0.05       0.21 r
+  core/enc_block/U1622/ZN (AOI21_X1)                      0.04       0.26 f
+  core/enc_block/U1421/ZN (NOR2_X1)                       0.05       0.31 r
+  core/enc_block/U1381/ZN (INV_X1)                        0.04       0.35 f
+  core/enc_block/U1378/ZN (NOR2_X1)                       0.06       0.41 r
+  core/enc_block/U1423/ZN (NAND3_X1)                      0.06       0.47 f
+  core/enc_block/U1380/ZN (INV_X1)                        0.04       0.50 r
+  core/enc_block/U1345/Z (BUF_X1)                         0.08       0.59 r
+  core/enc_block/U1624/ZN (AOI22_X1)                      0.06       0.65 f
+  core/enc_block/U1628/ZN (OAI221_X1)                     0.03       0.68 r
+  core/enc_block/sboxw[16] (aes_encipher_block)           0.00       0.68 r
+  core/U115/ZN (AOI22_X1)                                 0.04       0.72 f
+  core/U114/ZN (INV_X1)                                   0.14       0.86 r
+  core/sbox_inst/sboxw[16] (aes_sbox)                     0.00       0.86 r
+  core/sbox_inst/U3359/ZN (INV_X1)                        0.09       0.95 f
+  core/sbox_inst/U2532/Z (BUF_X1)                         0.06       1.01 f
+  core/sbox_inst/U3146/ZN (NAND2_X1)                      0.11       1.12 r
+  core/sbox_inst/U1747/ZN (AND2_X1)                       0.09       1.21 r
+  core/sbox_inst/U1664/Z (BUF_X1)                         0.05       1.26 r
+  core/sbox_inst/U1653/ZN (INV_X1)                        0.06       1.33 f
+  core/sbox_inst/U1910/ZN (AOI22_X1)                      0.06       1.39 r
+  core/sbox_inst/U1908/ZN (OAI221_X1)                     0.05       1.44 f
+  core/sbox_inst/U1907/ZN (INV_X1)                        0.03       1.47 r
+  core/sbox_inst/U2530/ZN (OAI222_X1)                     0.04       1.51 f
+  core/sbox_inst/U2529/ZN (AOI221_X1)                     0.08       1.59 r
+  core/sbox_inst/U2528/ZN (INV_X1)                        0.03       1.62 f
+  core/sbox_inst/U2498/ZN (AOI22_X1)                      0.05       1.67 r
+  core/sbox_inst/U2495/ZN (OAI221_X1)                     0.09       1.76 f
+  core/sbox_inst/new_sboxw[22] (aes_sbox)                 0.00       1.76 f
+  core/keymem/new_sboxw[22] (aes_key_mem)                 0.00       1.76 f
+  core/keymem/U11898/Z (XOR2_X1)                          0.13       1.89 r
+  core/keymem/U7390/ZN (XNOR2_X1)                         0.10       1.98 r
+  core/keymem/U11894/Z (XOR2_X1)                          0.10       2.08 r
+  core/keymem/U7391/ZN (XNOR2_X1)                         0.08       2.16 r
+  core/keymem/U11870/Z (XOR2_X1)                          0.09       2.25 r
+  core/keymem/U7430/ZN (INV_X1)                           0.03       2.28 f
+  core/keymem/U7429/ZN (AOI222_X1)                        0.05       2.33 r
+  core/keymem/U7428/ZN (INV_X1)                           0.03       2.36 f
+  core/keymem/U10785/ZN (AOI221_X4)                       0.12       2.49 r
+  core/keymem/U7405/ZN (OAI22_X1)                         0.05       2.54 f
+  core/keymem/key_mem_reg[1][30]/D (DFF_X1)               0.01       2.55 f
+  data arrival time                                                  2.55
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.00      10.00
+  core/keymem/key_mem_reg[1][30]/CK (DFF_X1)              0.00      10.00 r
+  library setup time                                     -0.03       9.97
+  data required time                                                 9.97
+  --------------------------------------------------------------------------
+  data required time                                                 9.97
+  data arrival time                                                 -2.55
+  --------------------------------------------------------------------------
+  slack (MET)                                                        7.42
+
+
+1
