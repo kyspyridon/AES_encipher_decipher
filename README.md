@@ -35,6 +35,7 @@ This Phase's deliverables include the final Gate-Level netlist as produced by Ca
 
 # Directory Structure
 
+```
 final_deliverable
 ├── ECE330_SoC-Final_Presentation.pptx
 ├── ECE330_SoC-Final_Report.docx
@@ -113,4 +114,4 @@ final_deliverable
     └── scripts
         ├── innovus.tcl
         └── primetime.tcl
-
+```
