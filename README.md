@@ -1,6 +1,6 @@
 # AES_encipher_decipher
 
-This project was developed in collaboration with Konstantina Topali, as our semester project for the ECE330 - System on Chip design course in the University of Thessaly.
+This project was developed in collaboration with Konstantina Topali, as our semester project for the ECE330 - System on Chip Design course in the University of Thessaly.
 
 Brief Project Implementation Phases Description
 ------------------------------------------------
@@ -9,12 +9,12 @@ The project's goal is, given an RTL design, to execute the ASIC flow and produce
 This project consists of 3 distinct phases.
 
 # Phase I
-In Phase I we examined the original [RTL code](https://github.com/secworks/aes) provided from Joachim Strömbergson, and made the necessary modifications, to transform it to an Encoder/Decoder system with error detection capabilities. The modified code was tested with an automated testbench for functional correctness using the industrial simulator Incisive™ from Cadence© and was also tested against a golden software model.
+In Phase I, we examined the original [RTL code](https://github.com/secworks/aes) provided from Joachim Strömbergson, and made the necessary modifications, to transform it to an Encoder/Decoder system with error detection capabilities. The modified code was tested with an automated testbench for functional correctness using the industrial simulator Incisive™ from Cadence© and was also tested against a golden software model.
 
 This Phase's deliverables are the original RTL code, the modified RTL code as well as the automated testbench and golden software model.
 
 # Phase II
-In Phase II we performed Logic Synthesis on the modified RTL to create the Gate-Level netlist. Logic Synthesis was performed by using the Design Compiler™ tool from Synopsys©.
+In Phase II, we performed Logic Synthesis on the modified RTL to create the Gate-Level netlist. Logic Synthesis was performed by using the Design Compiler™ tool from Synopsys©.
 
 We used 2 different approaches to synthesize our design. The first approach is a top-down approach that involves synthesizing our designby synthesizing our designs all at once starting with the higher levels of hierarchy and moving down.
 
@@ -27,7 +27,7 @@ Functional verification of the now Gate-Level netlist was performed once again b
 This Phase's deliverables include all produced logs and reports across all clock frequencies and synthesis approaches as well as the Bash scripts to do so.
 
 # Phase III
-In Phase III we present the back-end of the ASIC flow performed on our design. From the Gate-Level netlist produced at Phase II we perform Power planning, as well as Place and Route for our design using the PnR tool Innovus™ from Cadence©.
+In Phase III, we present the back-end of the ASIC flow performed on our design. From the Gate-Level netlist produced at Phase II we perform Power planning, as well as Place and Route for our design using the PnR tool Innovus™ from Cadence©.
 
 We placed power rings, rails and stripes to sufficiently provide power for our design, performed standard cell placement and Clock Tree Synthesis and routed our design to minimize power consumption and meet timing for different sets of conditions. We then extracted parasitics, in .spef format, and path delays, in .sdf format, from the Routed design and used them to more accurately time our design. This was accomplished by giving this information to the state-of-the-art timer PrimeTime™ by Synopsys©.We also used the PrimePower™ tool from Synopsys© to now accurately measure power consumption post-PnR by using the .spef file. After we verified that the timing is met for both setup and hold and finally performed a final simulation using the industrial simulator Incisive™ from Cadence© to ensure our design works correctly.
 
